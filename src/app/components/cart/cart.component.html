@@ -1,0 +1,43 @@
+<h1 *ngIf="!chosenProducts.length" style="display: flex; justify-content: center;">Cart is empty</h1>
+
+<div *ngIf="chosenProducts.length" class="form">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <h2>Full name</h2>
+            <br>
+            <input type="text" name="fullName" required minlength=3 placeholder="(minimum 3 characters)" [(ngModel)]="name">
+        </div>
+
+        <div>
+            <h2>Address</h2>
+            <br>
+            <input type="text" name="adress" required minlength=6 placeholder="(minimum 6 characters)" [(ngModel)]="address">
+        </div>
+
+        <div>
+            <h2>Credit card number</h2>
+            <input type="text" name="creditCard" required minlength=16 placeholder="(16-digit number)" [(ngModel)]="creditNumber">    
+        </div>
+
+        <div>
+            <p>We'll never share your payment details with anyone else.</p>
+            <button type="submit" [disabled]="form.invalid" routerLink="/confirmation" (click)="changeName()">Submit</button>    
+        </div>
+    </form>
+</div>
+
+<div *ngIf="chosenProducts.length" class="cart-container">
+    <div class="cart-panel">
+        <div class="cart-item" *ngFor="let product of chosenProducts">
+            <img class="product-image" src={{product.url}}>
+            <div class="cart-item-details">
+                <h1>{{product.name}}</h1>
+                <h2>${{product.price}}</h2>
+                <input type="number" (change)="updateProducts(product)" class="number-input" value="{{product.amount}}" max="10" [(ngModel)]="product.amount">
+            </div>
+        </div>
+        <h1>Total: ${{totalPrice}}</h1>
+    </div>
+</div>
+
+

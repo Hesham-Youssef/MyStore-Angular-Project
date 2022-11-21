@@ -1,0 +1,13 @@
+.header {
+    text-align: center;
+    background: #33B5E5;
+    color: #fff;
+    font-size: x-large;
+    padding: 12px;
+  }
+  
+  a {
+    font-size: x-large;
+    margin: 20px;
+    color: #ffffff;
+  }

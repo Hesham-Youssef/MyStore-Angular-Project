@@ -1,0 +1,13 @@
+<div class="product-container">
+    <img class="product-image" src={{product.url}} routerLink="/detail"  (click)="setProduct(product)">
+    <h2>{{product.name}}</h2>
+    <h2>${{product.price}}</h2>
+    <form class="buy">
+        <select class="select-input" required name="amount" [(ngModel)]="product.amount">
+            <option default>1</option>
+            <option *ngFor="let num of numbers">{{num}}</option>
+        </select>
+        <br>
+        <button (click)="clicked.emit(product)">Add to cart</button>
+    </form>
+</div>
