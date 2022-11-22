@@ -1,4 +1,3 @@
-import { index } from 'mathjs';
 import { CartProductsService } from './../../services/cart-products.service';
 import { FetchDataService } from './../../services/fetch-data.service';
 import { Product } from './../../model/product';

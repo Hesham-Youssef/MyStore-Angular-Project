@@ -1,7 +1,7 @@
 import { DetailxitemService } from './../../services/detailxitem.service';
 import { CartProductsService } from './../../services/cart-products.service';
 import { Product } from './../../model/product';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-product-item-detail',

@@ -1,5 +1,4 @@
 import { DetailxitemService } from './../../services/detailxitem.service';
-import { CartProductsService } from './../../services/cart-products.service';
 import { Product } from './../../model/product';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 

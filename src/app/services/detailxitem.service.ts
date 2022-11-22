@@ -1,4 +1,4 @@
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Product } from './../model/product';
 import { Injectable } from '@angular/core';
 
