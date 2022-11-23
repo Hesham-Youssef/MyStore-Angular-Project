@@ -11,7 +11,6 @@ export class CartComponent implements OnInit {
   chosenProducts: Product[] = [];
   totalPrice: string = '';
   empty: boolean = false;
-  valid: boolean = false;
 
   name: string = '';
   address: string = '';
@@ -48,18 +47,18 @@ export class CartComponent implements OnInit {
   }
 
 
-  
+
   validateName(){
     if(/[^a-zA-Z]/.test(this.name)){
+      this.name = this.name.substring(0, this.name.length - 1);
       alert("Name must only include letters");
-      this.valid = false
     }
   }
 
   validateCardNumber(){
     if(!/^\d+$/.test(this.creditNumber)){
+      this.creditNumber = this.creditNumber.substring(0, this.creditNumber.length - 1);
       alert("Card number must only include numbers");
-      this.valid = false
     }
   }
 }
