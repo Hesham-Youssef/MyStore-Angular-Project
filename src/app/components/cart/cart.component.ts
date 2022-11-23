@@ -11,10 +11,12 @@ export class CartComponent implements OnInit {
   chosenProducts: Product[] = [];
   totalPrice: string = '';
   empty: boolean = false;
+  valid: boolean = false;
 
   name: string = '';
   address: string = '';
   creditNumber: string = '';
+
   
   constructor(private cartProductsService: CartProductsService) {
   }
@@ -43,5 +45,21 @@ export class CartComponent implements OnInit {
 
   changeName(){
     this.cartProductsService.changeName(this.name);
+  }
+
+
+  
+  validateName(){
+    if(/[^a-zA-Z]/.test(this.name)){
+      alert("Name must only include letters");
+      this.valid = false
+    }
+  }
+
+  validateCardNumber(){
+    if(!/^\d+$/.test(this.creditNumber)){
+      alert("Card number must only include numbers");
+      this.valid = false
+    }
   }
 }

@@ -5,7 +5,7 @@
         <div>
             <h2>Full name</h2>
             <br>
-            <input type="text" name="fullName" required minlength=3 placeholder="(minimum 3 characters)" [(ngModel)]="name">
+            <input type="text" name="fullName" required minlength=3 placeholder="(minimum 3 characters)" [(ngModel)]="name" (ngModelChange)="validateName()">
         </div>
 
         <div>
@@ -16,7 +16,7 @@
 
         <div>
             <h2>Credit card number</h2>
-            <input type="text" name="creditCard" required minlength=16 placeholder="(16-digit number)" [(ngModel)]="creditNumber">    
+            <input type="text" name="creditCard" required minlength=16 placeholder="(16-digit number)" [(ngModel)]="creditNumber" (ngModelChange)="validateCardNumber()">    
         </div>
 
         <div>
