@@ -1,6 +1,7 @@
 import { CartProductsService } from './../../services/cart-products.service';
 import { Product } from './../../model/product';
 import { Component, OnInit } from '@angular/core';
+import { format } from 'mathjs';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,9 @@ export class CartComponent implements OnInit {
   chosenProducts: Product[] = [];
   totalPrice: string = '';
   empty: boolean = false;
+
+  validName: boolean = false;
+  validCard: boolean = false;
 
   name: string = '';
   address: string = '';
@@ -51,14 +55,22 @@ export class CartComponent implements OnInit {
   validateName(){
     if(/[^a-zA-Z]/.test(this.name)){
       this.name = this.name.substring(0, this.name.length - 1);
+      this.validName = false;
       alert("Name must only include letters");
+    }else{
+      this.validName = true;
     }
   }
 
   validateCardNumber(){
     if(!/^\d+$/.test(this.creditNumber)){
       this.creditNumber = this.creditNumber.substring(0, this.creditNumber.length - 1);
+      this.validCard = false;
       alert("Card number must only include numbers");
+    }else{
+      this.validCard = true;
     }
+
+    console.log(this.validCard || this.validName);
   }
 }

@@ -21,7 +21,7 @@
 
         <div>
             <p>We'll never share your payment details with anyone else.</p>
-            <button type="submit" [disabled]="form.invalid" routerLink="/confirmation" (click)="changeName()">Submit</button>    
+            <button type="submit" [disabled]="form.invalid || !validName || !validCard" routerLink="/confirmation" (click)="changeName()">Submit</button>    
         </div>
     </form>
 </div>
