@@ -70,7 +70,5 @@ export class CartComponent implements OnInit {
     }else{
       this.validCard = true;
     }
-
-    console.log(this.validCard || this.validName);
   }
 }
